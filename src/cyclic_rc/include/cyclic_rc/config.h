@@ -28,10 +28,11 @@
 #endif
 
 // dll export/import macro
-#ifdef CYCLIC_RC_EXPORTS 
-    #define CYCLIC_RC_EXPORT _declspec(dllexport)
-#else 
-    #define CYCLIC_RC_EXPORT _declspec(dllimport)
-#endif
+// #ifdef CYCLIC_RC_EXPORTS
+//     #define CYCLIC_RC_EXPORT _declspec(dllexport)
+// #else
+//     #define CYCLIC_RC_EXPORT _declspec(dllimport)
+// #endif
 
-#define CYCLIC_RC_FORCE_INLINE __forceinline
+// #define CYCLIC_RC_FORCE_INLINE __forceinline
+#define CYCLIC_RC_FORCE_INLINE inline

@@ -29,7 +29,7 @@
 namespace cyclic_rc { namespace details
 {
 
-enum class collect_type : int
+enum collect_type
 {
     decrease_ref, decrease_ref_test, scan,  collect_white, scan_black
 };

@@ -37,8 +37,10 @@ collector_it * g_collector_it = nullptr;
 // nifty counter
 static int g_counter = 0;
 
+template<>
 bool collector_is_in_free<config_nothread, false>::value      = false;
 
+template<>
 thread_local
 bool collector_is_in_free<config_thread, true>::value         = false;
 
@@ -46,8 +48,8 @@ using obj_count_in  = obj_count<config_nothread>;
 using obj_count_it  = obj_count<config_thread>;
 
 //must be alive during global objects destruction
-obj_count_in::mutex_type* obj_count_in::m_mutex = nullptr;
-obj_count_it::mutex_type* obj_count_it::m_mutex = nullptr;
+template<> obj_count_in::mutex_type* obj_count_in::m_mutex = nullptr;
+template<> obj_count_it::mutex_type* obj_count_it::m_mutex = nullptr;
 
 collector_initializer::collector_initializer()
 {
@@ -316,7 +318,7 @@ collector<config>::~collector()
 	collect_impl(true);
 };
 
-template collector<config_nothread>;
-template collector<config_thread>;
+// template collector<config_nothread>;
+// template collector<config_thread>;
 
 };};

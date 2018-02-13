@@ -27,8 +27,8 @@
 #include "boost/smart_ptr/detail/spinlock.hpp"
 #include <atomic>
 
-#pragma warning(push)
-#pragma warning(disable:4251)
+// #pragma warning(push)
+// #pragma warning(disable:4251)
 
 namespace cyclic_rc
 {
@@ -53,7 +53,7 @@ class spinlock
         mutex_type  m_mutex;
 
     public:
-        spinlock()      {m_mutex.v_ = 0;};
+        // spinlock()      {m_mutex.v_ = 0;};
 
         void            lock()      { m_mutex.lock(); };
         void            unlock()    { m_mutex.unlock(); };
@@ -122,7 +122,6 @@ class obj_count
 	private:
 		counter             m_counter;
 
-        CYCLIC_RC_EXPORT
         static mutex_type*  m_mutex;
 
         friend struct collector_initializer;
@@ -179,6 +178,6 @@ class obj_count
 
 };};
 
-#pragma warning(pop)
+// #pragma warning(pop)
 
 #include "cyclic_rc/details/obj_count.inl"

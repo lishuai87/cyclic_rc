@@ -25,8 +25,8 @@
 
 #include <vector>
 
-#pragma warning(push)
-#pragma warning(disable: 4251) // needs to have dll-interface to be used by clients
+// #pragma warning(push)
+// #pragma warning(disable: 4251) // needs to have dll-interface to be used by clients
 
 namespace cyclic_rc
 {
@@ -59,7 +59,7 @@ struct collector_is_in_free<config, false>
 };
 
 template<class config>
-class CYCLIC_RC_EXPORT collector
+class collector
 {
     private:
         static const bool multithreaded = config::is_multithreaded;
@@ -107,7 +107,7 @@ class CYCLIC_RC_EXPORT collector
         static collector*   get();
 };
 
-struct CYCLIC_RC_EXPORT collector_initializer
+struct collector_initializer
 {
     collector_initializer();
     ~collector_initializer();
@@ -117,4 +117,6 @@ static collector_initializer collector_init;
 
 }}
 
-#pragma warning(pop)
+// #pragma warning(pop)
+
+#include "cyclic_rc/details/collector.inl"

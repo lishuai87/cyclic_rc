@@ -20,7 +20,6 @@
 
 #include "test.h"
 #include "obj.h"
-#include "timer.h"
 #include <iostream>
 
 #include <thread>

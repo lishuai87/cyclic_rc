@@ -78,12 +78,14 @@ using collector_it = collector<config_thread>;
 extern collector_in * g_collector_in;
 extern collector_it * g_collector_it;
 
+template<>
 inline collector<config_nothread>* 
 collector<config_nothread>::get()
 {
     return g_collector_in;
 };
 
+template<>
 inline collector<config_thread>* 
 collector<config_thread>::get()
 {

@@ -133,7 +133,7 @@ class shared_ptr
         shared_ptr();
 
         // create empty object
-        shared_ptr(nullptr_t);
+        shared_ptr(std::nullptr_t);
 
         // initialize with pointer p; reference counter increased by one
         explicit shared_ptr(pointer_type p);
@@ -249,7 +249,7 @@ class shared_ptr
         template<class Y, bool multi2>
         shared_ptr&         operator=(shared_ptr<Y, multi2> && r) = delete;
 
-        template<class T, bool multithread>
+        template<class Y, bool multi2>
         friend class shared_ptr;
 };
 

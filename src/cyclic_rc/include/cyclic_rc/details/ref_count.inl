@@ -27,8 +27,10 @@ namespace cyclic_rc { namespace details
 {
 
 inline rc_count::ref_info::ref_info(bool is_acyclic)
-    : count(0), buffered(0), age((int)age_type::old)
-    , color(is_acyclic ? (size_t)color::green : (size_t)color::black)    
+    : count(0),
+      color(is_acyclic ? (size_t)color::green : (size_t)color::black),
+      buffered(0),
+      age((int)age_type::old)
 {};
 
 inline  rc_count::rc_count(bool is_acyclic)

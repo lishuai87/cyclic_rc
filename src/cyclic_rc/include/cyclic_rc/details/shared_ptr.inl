@@ -47,7 +47,7 @@ shared_ptr<T, multithread>::shared_ptr()
 
 template<typename T, bool multithread>
 CYCLIC_RC_FORCE_INLINE
-shared_ptr<T, multithread>::shared_ptr(nullptr_t)
+shared_ptr<T, multithread>::shared_ptr(std::nullptr_t)
 : m_ptr()
 {}
 

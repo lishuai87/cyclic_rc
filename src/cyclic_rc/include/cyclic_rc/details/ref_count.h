@@ -20,6 +20,8 @@
 
 #pragma once
 
+#include <stddef.h>
+
 namespace cyclic_rc { namespace details
 {
 

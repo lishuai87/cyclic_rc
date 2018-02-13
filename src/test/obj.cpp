@@ -30,8 +30,8 @@
 namespace cyclic_rc { namespace testing
 {
 
-std::atomic<int> g_code = 0;
-std::atomic<int> g_count = 0;
+std::atomic<int> g_code(0);
+std::atomic<int> g_count(0);
 
 template<bool multithread>
 thread_local static
